@@ -2,6 +2,8 @@
 
 Private marathon training dashboard built from the supplied October 2026 PRD.
 
+Read the [Stride Bible](STRIDE_BIBLE.md) before planning changes. It documents the current product, broader vision, major technical decisions, and open questions.
+
 ## Runtime
 Vinext/React on Sites Workers; Cloudflare D1 stores versioned training state per authenticated ChatGPT user. The API requires platform identity and uses conditional writes to reject stale updates. D1 schema migrations are in `drizzle/`; the personalized plan is seeded once per user in the request path, never during migrations. No third-party credentials are needed.
 
